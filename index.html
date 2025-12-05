@@ -2,72 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GadgetHub</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>GADGET HUB-PRODUCTS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="GadgetHub Logo">
-        </div>
+        <h1>GADGET HUB</h1>
+        <P SMART GADGETS FOR SMART LIVING></P>
         <nav>
-            <ul>
-                <li><a href="                
-                <li><a href="#">Categories</a></li>
-                <li><a href="                 
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <a href="#">Home</a>
+            <a href="#" class="active">Product</a>
+            <a href="#">Cart</a>
+            <a href="#">Contact</a>
         </nav>
-        <div class="search-bar">
-            <input type="search" placeholder="Search for gadgets...">
-            <button>Search</button>
-        </div>
-        <div class="menu-icon">
-            <span>Cart</span>
-            <span>About</span>
-            <span></span>
-        </div>
     </header>
-    <main>
-        <section class="hero-banner">
-            <h1>Welcome to GadgetHub</h1>
-            <p>Smart Gadgets for Smart living</p>
-            <button>Shop Now</button>
-        </section>
-        <section class="product-category">
-            <h2>Product Categories</h2>
-            <ul>
-                <li><a href="                       
-                <li><a href="#">Laptops</a></li>
-                <li><a href="                   
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </section>
-        <section class="featured-items">
-            <h2>Featured Items</h2>
-            <div class="product-grid">
-                <!-- Product cards will go here -->
-                 <div class="product-card">
-            <img src="headphones.png"alt="headphones"/>
-            <h4>Wireless headphones</h4>
-            <p>5,000Xaf</p>
-        </div>
-        <div class="product-card">
-            <img src="15pro.png"alt="Iphone 15 Pro"/>
-            <h4>Iphone 15 Pro</h4>
-            <p>420,000Xaf</p>
-        </div>
-        <div class="product-card">
-            <img src="smartwatch.png"alt="smartwatch"/>
-            <h4>Smart Watch</h4>
-            <p>10,000Xaf</p>
-        </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 GadgetHub</p>
-    </footer>
+<section class="search-area">
+    <input type="text" id="searchBar" placeholder="search gadgets..." onkeyup="searchProduct()">
+</section>
+<section class="product-container" id="productList">
+    <div class="card">
+        <img src="images/phone.png">
+        <h3 class="title">smrtphone X pro</h3>
+        <p class="desc">High perfomance smartphone with 256GB storage.</p>
+        <p class="price">200k</p>
+        <button onclick="addToCart('smartphone X pro')">Add to cart</button>
+</div>
+<div class="card">
+    <img src="image/laptop.png">
+    <h3 class="title">UltraBook 15</h3>
+    <p class="desc">Small laptop with powerful perfomance.</p>
+    <p class="price">500k</p>
+    <button onclick="addToCart('UltraBook 15')">Add to cart</button>
+</div>
+<div class="card">
+    <img src="image/hedphones.png">
+    <h3 class="title">Wireless Headphones</h3>
+    <p class="desc">Noise cancelling over-ear headphones.</p>
+    <p class="price">15k</p>
+    <button onclick="addToCart('Wireless Headphones')">Add to cart</button>
+</div>
+<div class="card">
+    <img src="image/smartwatch.png">
+    <h3 class="title">Smartwatch Z</h3>
+    <p class="desc">Track fitness, notifications, and more</p>
+    <p clss="price">10k</p>
+    <button onclick="addToCart('Smartwatch Z')">Add to cart</button>
+</div>
+<div class="card">
+    <img src="image/Tablet.png">
+    <h3 class="title">Tablet Max 10</h3>
+    <p class="desc">Large-screen tablet perfect for work and playing games</p>
+    <p class="price">150k</p>
+    <button onclick="addToCart('Tablet Max 10')">Add to cart</button>
+</div>
+</section>
+<script src="script.js"></script>
+
 </body>
+
 </html>
