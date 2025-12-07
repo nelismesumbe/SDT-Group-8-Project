@@ -1,0 +1,142 @@
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+.body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:blue;
+}
+.header{
+    background-color:blue;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header nav a{
+    color:blue;
+    margin:0 12px;
+    text-decoration: none;
+
+}
+.header nav a.active,
+haeder nav a:hover{
+    color:aqua;
+
+}
+.search-area{
+    text-align: center;
+    padding: 20px;
+
+}
+#searchBar{
+    width: 130px;
+    padding: 12px;
+    border-radius: 10px;
+    border:1px solod greenyellow;
+    font-size: 16px;
+}
+.product-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px;
+    justify-content:center ;
+}
+.card img{
+    width: 50%;
+    border-radius: 5px;
+
+}
+.card .price{
+    color:#00aaff;
+    font-weight: bold;
+    margin: 10px 0;
+}
+button{
+    background: #00aaff;
+    color:white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor:pointer;
+    font-size: 14px;
+
+}
+button:hover{
+    background: #0088cc;
+}
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+.body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f0f0f0;
+}
+.header{
+    background-color:blue;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header nav a{
+    color:blue;
+    margin:0 12px;
+    text-decoration: none;
+
+}
+.header nav a.active,
+haeder nav a:hover{
+    color:aqua;
+
+}
+.search-area{
+    text-align: center;
+    padding: 20px;
+
+}
+#searchBar{
+    width: 60px;
+    padding: 12px;
+    border-radius: 6px;
+    border:1px solod gray;
+    font-size: 16px;
+}
+.product-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px;
+    justify-content: center;
+}
+.card img{
+    width: 100%;
+    border-radius: 10px;
+
+}
+.card .price{
+    color:#00aaff;
+    font-weight: bold;
+    margin: 10px 0;
+}
+button{
+    background: #00aaff;
+    color:white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor:pointer;
+    font-size: 14px;
+
+}
+button:hover{
+    background: #0088cc;
+}
