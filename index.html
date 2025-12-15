@@ -1,267 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GadgetHub - Smart Watch Pro X</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <a href="login.html">Login in to purchase</a>
+  <style>
+    h1 {
+       text-align: center;
+       font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       font-style:oblique;
+       font-size:xx-large;
+       font-weight: 400;
+    }
+    h2 {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: small;
+      font-style: italic;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gadget Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <i class="fas fa-robot"></i>
-                    <h1>GadgetHub</h1>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-shopping-bag"></i> Products</a></li>
-                    <li><a href="#"><i class="fas fa-tag"></i> Deals</a></li>
-                    <li><a href="#"><i class="fas fa-headset"></i> Support</a></li>
-                </ul>
-                <div class="nav-icons">
-                    <a href="#"><i class="fas fa-search"></i></a>
-                    <a href="#"><i class="fas fa-heart"></i></a>
-                    <a href="#" class="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">2</span>
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </header>
+  <h1>Gadget-Hub</h1>
+  <h2>Smart Gadgets for smart living</h2>
+   <div class="search-container">
+    <input type="text" placeholder="search products">
+    <text-align: center;
+  </div>
+ 
+  <div class="product-container" id="product-container">
+    <na>
+  </div>
+ 
+</nav>
+ <!-- products will be generated here -->
 
-    <!-- Product Section -->
-    <main class="container">
-        <div class="product-page">
-            <!-- Product Images -->
-            <div class="product-images">
-                <div class="main-image">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Smart Watch Pro X" id="mainImage">
-                </div>
-                <div class="image-thumbnails">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Watch angle 1" class="thumbnail active" onclick="changeImage(this.src)">
-                    <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Watch angle 2" class="thumbnail" onclick="changeImage(this.src)">
-                    <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Watch on wrist" class="thumbnail" onclick="changeImage(this.src)">
-                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Watch features" class="thumbnail" onclick="changeImage(this.src)">
-                </div>
-            </div>
-
-            <!-- Product Details -->
-            <div class="product-details">
-                <div class="breadcrumb">
-                    <a href="#">Home</a> / <a href="#">Smart Watches</a> / <span>Smart Watch Pro X</span>
-                </div>
-                
-                <h1 class="product-title">Smart Watch Pro X - Advanced Edition</h1>
-                
-                <div class="product-rating">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>4.5 (128 Reviews)</span>
-                    </div>
-                    <span class="stock-status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
-                </div>
-                
-                <p class="product-description">
-                    Experience the future of wearable technology with Smart Watch Pro X. Featuring advanced health monitoring, 7-day battery life, LTE connectivity, and a stunning AMOLED display. Perfect for fitness enthusiasts and tech lovers.
-                </p>
-                
-                <div class="product-price">
-                    <span class="current-price">$299.99</span>
-                    <span class="original-price">$399.99</span>
-                    <span class="discount">25% OFF</span>
-                </div>
-                
-                <div class="product-features">
-                    <h3><i class="fas fa-bolt"></i> Key Features</h3>
-                    <ul>
-                        <li><i class="fas fa-heartbeat"></i> Advanced heart rate monitoring</li>
-                        <li><i class="fas fa-battery-full"></i> 7-day battery life</li>
-                        <li><i class="fas fa-wifi"></i> LTE & Wi-Fi connectivity</li>
-                        <li><i class="fas fa-swimming-pool"></i> Water resistant (50m)</li>
-                        <li><i class="fas fa-mobile-alt"></i> iOS & Android compatible</li>
-                        <li><i class="fas fa-running"></i> 20+ workout modes</li>
-                    </ul>
-                </div>
-                
-                <div class="product-variants">
-                    <h3>Color:</h3>
-                    <div class="color-options">
-                        <button class="color-option active" style="background-color: #2c3e50;" data-color="Midnight Black"></button>
-                        <button class="color-option" style="background-color: #3498db;" data-color="Ocean Blue"></button>
-                        <button class="color-option" style="background-color: #e74c3c;" data-color="Crimson Red"></button>
-                        <button class="color-option" style="background-color: #2ecc71;" data-color="Forest Green"></button>
-                    </div>
-                    <p class="selected-color">Selected: Midnight Black</p>
-                </div>
-                
-                <div class="product-actions">
-                    <div class="quantity-selector">
-                        <button class="qty-btn" onclick="updateQuantity(-1)">-</button>
-                        <input type="number" id="quantity" value="1" min="1" max="10">
-                        <button class="qty-btn" onclick="updateQuantity(1)">+</button>
-                    </div>
-                    
-                    <button class="btn btn-primary" onclick="addToCart()">
-                        <i class="fas fa-cart-plus"></i> Add to Cart
-                    </button>
-                    
-                    <button class="btn btn-secondary" onclick="addToWishlist()">
-                        <i class="fas fa-heart"></i> Add to Wishlist
-                    </button>
-                </div>
-                
-                <div class="delivery-info">
-                    <div class="info-item">
-                        <i class="fas fa-shipping-fast"></i>
-                        <div>
-                            <strong>Free Shipping</strong>
-                            <p>Delivery in 2-4 business days</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-undo"></i>
-                        <div>
-                            <strong>30-Day Returns</strong>
-                            <p>Hassle-free return policy</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <strong>2-Year Warranty</strong>
-                            <p>Manufacturer warranty included</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Tabs -->
-        <section class="product-tabs">
-            <div class="tabs-header">
-                <button class="tab-btn active" onclick="openTab('description')">Description</button>
-                <button class="tab-btn" onclick="openTab('specs')">Specifications</button>
-                <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
-                <button class="tab-btn" onclick="openTab('faq')">FAQ</button>
-            </div>
-            
-            <div class="tabs-content">
-                <div id="description" class="tab-content active">
-                    <h3>Detailed Description</h3>
-                    <p>The Smart Watch Pro X redefines what a smartwatch can do. With its advanced sensors and AI-powered health insights, it's more than just a timepiece - it's your personal health companion.</p>
-                    <ul>
-                        <li><strong>Health Monitoring:</strong> Track heart rate, blood oxygen, sleep patterns, and stress levels</li>
-                        <li><strong>Fitness Tracking:</strong> 20+ workout modes with GPS tracking</li>
-                        <li><strong>Smart Features:</strong> Notifications, music control, voice assistant, and contactless payments</li>
-                        <li><strong>Display:</strong> 1.78" AMOLED touchscreen with always-on display</li>
-                        <li><strong>Battery:</strong> 7-day battery life with fast charging (0-100% in 60 minutes)</li>
-                    </ul>
-                </div>
-                
-                <div id="specs" class="tab-content">
-                    <h3>Technical Specifications</h3>
-                    <table>
-                        <tr><td>Display</td><td>1.78" AMOLED, 448x368 pixels</td></tr>
-                        <tr><td>Processor</td><td>Dual-core 1.2GHz</td></tr>
-                        <tr><td>RAM/Storage</td><td>1GB / 8GB</td></tr>
-                        <tr><td>Connectivity</td><td>Bluetooth 5.2, Wi-Fi, LTE (optional)</td></tr>
-                        <tr><td>Sensors</td><td>Heart rate, SpO2, GPS, Accelerometer, Gyroscope</td></tr>
-                        <tr><td>Water Resistance</td><td>5 ATM (50 meters)</td></tr>
-                        <tr><td>Battery</td><td>450mAh, 7-day typical use</td></tr>
-                        <tr><td>Compatibility</td><td>iOS 12+, Android 8.0+</td></tr>
-                    </table>
-                </div>
-                
-                <div id="reviews" class="tab-content">
-                    <h3>Customer Reviews</h3>
-                    <div class="review">
-                        <div class="review-header">
-                            <strong>Alex Johnson</strong>
-                            <div class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p>"Best smartwatch I've owned! The battery life is incredible and health tracking is super accurate."</p>
-                    </div>
-                    <div class="review">
-                        <div class="review-header">
-                            <strong>Sarah Miller</strong>
-                            <div class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                        <p>"Great value for money. The display is beautiful and the fitness tracking features are comprehensive."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Related Products -->
-        <section class="related-products">
-            <h2><i class="fas fa-thumbs-up"></i> You Might Also Like</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1530893609608-727a05c4013d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Wireless Earbuds">
-                    <h3>Wireless Pro Earbuds</h3>
-                    <p class="price">$129.99</p>
-                    <button class="btn-small">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Fitness Tracker">
-                    <h3>Fitness Tracker Plus</h3>
-                    <p class="price">$79.99</p>
-                    <button class="btn-small">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586950012036-b957f2c7cbf3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Phone Case">
-                    <h3>Smartphone Case Pro</h3>
-                    <p class="price">$34.99</p>
-                    <button class="btn-small">Add to Cart</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>GadgetHub</h3>
-                    <p>Your one-stop shop for the latest gadgets and tech accessories.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#">About Us</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Shipping Policy</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> support@gadgethub.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 GadgetHub. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">Product added to cart!</div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
