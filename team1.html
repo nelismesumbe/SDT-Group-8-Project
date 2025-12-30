@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Hub - Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            min-height: 700px;
+        }
+
+        /* Left Section */
+        .left-section {
+            flex: 1;
+            background: linear-gradient(135deg, #1a237e 0%, #311b92 100%);
+            color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #00e5ff;
+        }
+
+        .brand h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00e5ff, #2979ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tagline h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .tagline p {
+            color: #b3b3ff;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .feature i {
+            color: #00e5ff;
+            font-size: 1.3rem;
+            width: 30px;
+        }
+
+        .feature span {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Right Section */
+        .right-section {
+            flex: 1.2;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .form-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+            color: #1a237e;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .input-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 20px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .input-with-icon input {
+            width: 100%;
+            padding: 18px 20px 18px 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+
+        .input-with-icon input:focus {
+            outline: none;
+            border-color: #2979ff;
+            background: white;
+            box-shadow: 0 5px 15px rgba(41, 121, 255, 0.1);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* Password Requirements */
+        .password-requirements {
+            margin-top: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .password-requirements p {
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .password-requirements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .password-requirements li {
+            margin-bottom: 5px;
+            color: #999;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .password-requirements li:before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #ff5252;
+        }
+
+        .password-requirements li.valid:before {
+            content: '✓';
+            color: #4CAF50;
+        }
+
+        /* Checkbox */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            color: #555;
+            font-size: 0.95rem;
+            user-select: none;
+        }
+
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            position: absolute;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            background-color: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .checkbox-container:hover input ~ .checkmark {
+            border-color: #2979ff;
+        }
+
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: #2979ff;
+            border-color: #2979ff;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .checkbox-container .checkmark:after {
+            left: 7px;
+            top: 3px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Buttons */
+        .signup-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #2979ff 0%, #1a237e 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(41, 121, 255, 0.3);
+        }
+
+        .signup-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            color: #999;
+        }
+
+        .divider:before,
+        .divider:after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .divider span {
+            padding: 0 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Social Buttons */
+        .social-signup {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn.google {
+            color: #DB4437;
+        }
+
+        .social-btn.apple {
+            color: #000;
+        }
+
+        .social-btn.facebook {
+            color: #4267B2;
+        }
+
+        /* Links */
+        .link {
+            color: #2979ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .login-link {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Error Messages */
+        .error-message {
+            color: #ff5252;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            min-height: 20px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .notification-content i {
+            font-size: 1.3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                max-width: 600px;
+            }
+            
+            .left-section, .right-section {
+                padding: 40px;
+            }
+            
+            .social-signup {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                border-radius: 15px;
+            }
+            
+            .left-section, .right-section {
+                padding: 30px 20px;
+            }
+            
+            .brand h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline h2 {
+                font-size: 1.5rem;
+            }
+            
+            .feature span {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="brand">
+                <i class="fas fa-microchip logo-icon"></i>
+                <h1>Gadget Hub</h1>
+            </div>
+            <div class="tagline">
+                <h2>Join the Tech Revolution</h2>
+                <p>Discover the latest gadgets, exclusive deals, and tech innovations</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>Latest Tech Products</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-percent"></i>
+                    <span>Exclusive Member Discounts</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Free Shipping on Orders $50+</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Tech Support</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Create Account</h2>
+                    <p>Join Gadget Hub today and explore the future of technology</p>
+                </div>
+
+                <form id="signupForm">
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="fullName" placeholder="Full Name" required>
+                        </div>
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="Phone Number (Optional)">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-requirements">
+                            <p>Password must contain:</p>
+                            <ul>
+                                <li id="reqLength">At least 8 characters</li>
+                                <li id="reqUpper">One uppercase letter</li>
+                                <li id="reqLower">One lowercase letter</li>
+                                <li id="reqNumber">One number</li>
+                                <li id="reqSpecial">One special character</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="newsletter" checked>
+                            <span class="checkmark"></span>
+                            Receive updates about new gadgets and exclusive offers
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                        </label>
+                        <div class="error-message" id="termsError"></div>
+                    </div>
+
+                    <button type="submit" class="signup-btn" id="signupBtn">
+                        <span>Create Account</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="divider">
+                        <span>Or sign up with</span>
+                    </div>
+
+                    <div class="social-signup">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn apple">
+                            <i class="fab fa-apple"></i>
+                            Apple
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <div class="login-link">
+                        Already have an account? <a href="#" class="link">Sign In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Account created successfully!</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const signupForm = document.getElementById('signupForm');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const togglePasswordBtn = document.getElementById('togglePassword');
+            const signupBtn = document.getElementById('signupBtn');
+            const notification = document.getElementById('notification');
+            
+            // Password requirements elements
+            const reqLength = document.getElementById('reqLength');
+            const reqUpper = document.getElementById('reqUpper');
+            const reqLower = document.getElementById('reqLower');
+            const reqNumber = document.getElementById('reqNumber');
+            const reqSpecial = document.getElementById('reqSpecial');
+            
+            // Toggle password visibility
+            togglePasswordBtn.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            });
+            
+            // Validate password in real-time
+            passwordInput.addEventListener('input', function() {
+                validatePassword(this.value);
+                validateConfirmPassword();
+            });
+            
+            // Validate confirm password in real-time
+            confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+            
+            // Validate name on blur
+            document.getElementById('fullName').addEventListener('blur', function() {
+                const nameError = document.getElementById('nameError');
+                if (!this.value.trim()) {
+                    nameError.textContent = 'Full name is required';
+                } else if (this.value.length < 2) {
+                    nameError.textContent = 'Name must be at least 2 characters';
+                } else {
+                    nameError.textContent = '';
+                }
+            });
+            
+            // Validate email on blur
+            document.getElementById('email').addEventListener('blur', function() {
+                const emailError = document.getElementById('emailError');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!this.value) {
+                    emailError.textContent = 'Email is required';
+                } else if (!emailRegex.test(this.value)) {
+                    emailError.textContent = 'Please enter a valid email address';
+                } else {
+                    emailError.textContent = '';
+                }
+            });
+            
+            // Validate terms on change
+            document.getElementById('terms').addEventListener('change', function() {
+                const termsError = document.getElementById('termsError');
+                if (!this.checked) {
+                    termsError.textContent = 'You must agree to the terms and conditions';
+                } else {
+                    termsError.textContent = '';
+                }
+            });
+            
+            // Validate password strength
+            function validatePassword(password) {
+                // Check length
+                if (password.length >= 8) {
+                    reqLength.classList.add('valid');
+                } else {
+                    reqLength.classList.remove('valid');
+                }
+                
+                // Check uppercase
+                if (/[A-Z]/.test(password)) {
+                    reqUpper.classList.add('valid');
+                } else {
+                    reqUpper.classList.remove('valid');
+                }
+                
+                // Check lowercase
+                if (/[a-z]/.test(password)) {
+                    reqLower.classList.add('valid');
+                } else {
+                    reqLower.classList.remove('valid');
+                }
+                
+                // Check number
+                if (/\d/.test(password)) {
+                    reqNumber.classList.add('valid');
+                } else {
+                    reqNumber.classList.remove('valid');
+                }
+                
+                // Check special character
+                if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
+                    reqSpecial.classList.add('valid');
+                } else {
+                    reqSpecial.classList.remove('valid');
+                }
+                
+                return isPasswordValid(password);
+            }
+            
+            function isPasswordValid(password) {
+                return password.length >= 8 &&
+                       /[A-Z]/.test(password) &&
+                       /[a-z]/.test(password) &&
+                       /\d/.test(password) &&
+                       /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+            }
+            
+            // Validate confirm password
+            function validateConfirmPassword() {
+                const confirmPasswordError = document.getElementById('confirmPasswordError');
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                
+                if (!confirmPassword) {
+                    confirmPasswordError.textContent = 'Please confirm your password';
+                    return false;
+                } else if (password !== confirmPassword) {
+                    confirmPasswordError.textContent = 'Passwords do not match';
+                    return false;
+                } else {
+                    confirmPasswordError.textContent = '';
+                    return true;
+                }
+            }
+            
+            // Validate phone number (optional)
+            function validatePhone(phone) {
+                if (!phone) return true; // Phone is optional
+                const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+                return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+            }
+            
+            // Show notification
+            function showNotification(message, isError = false) {
+                const notificationContent = notification.querySelector('span');
+                const icon = notification.querySelector('i');
+                
+                if (isError) {
+                    notification.style.background = '#ff5252';
+                    icon.className = 'fas fa-exclamation-circle';
+                } else {
+                    notification.style.background = '#4CAF50';
+                    icon.className = 'fas fa-check-circle';
+                }
+                
+                notificationContent.textContent = message;
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Simulate social signup
+            document.querySelectorAll('.social-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const platform = this.classList.contains('google') ? 'Google' :
+                                   this.classList.contains('apple') ? 'Apple' : 'Facebook';
+                    showNotification(`Signing up with ${platform}...`);
+                });
+            });
+            
+            // Form submission
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                const newsletter = document.getElementById('newsletter').checked;
+                const terms = document.getElementById('terms').checked;
+                
+                // Validate all fields
+                let isValid = true;
+                
+                // Validate name
+                if (!fullName || fullName.length < 2) {
+                    document.getElementById('nameError').textContent = 'Please enter a valid name (min 2 characters)';
+                    isValid = false;
+                }
+                
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email || !emailRegex.test(email)) {
+                    document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                    isValid = false;
+                }
+                
+                // Validate password
+                if (!isPasswordValid(password)) {
+                    showNotification('Please fix all password requirements', true);
+                    isValid = false;
+                }
+                
+                // Validate confirm password
+                if (!validateConfirmPassword()) {
+                    isValid = false;
+                }
+                
+                // Validate phone
+                if (phone && !validatePhone(phone)) {
+                    showNotification('Please enter a valid phone number', true);
+                    isValid = false;
+                }
+                
+                // Validate terms
+                if (!terms) {
+                    document.getElementById('termsError').textContent = 'You must agree to the terms and conditions';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Show loading state
+                    const originalText = signupBtn.innerHTML;
+                    signupBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+                    signupBtn.disabled = true;
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Create user object
+                        const user = {
+                            fullName,
+                            email,
+                            phone: phone || null,
+                            newsletter,
+                            createdAt: new Date().toISOString()
+                        };
+                        
+                        // Store in localStorage (for demo purposes)
+                        localStorage.setItem('gadgetHubUser', JSON.stringify(user));
+                        
+                        // Show success message
+                        showNotification(`Welcome to Gadget Hub, ${fullName.split(' ')[0]}!`);
+                        
+                        // Reset form
+                        signupForm.reset();
+                        document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                        document.querySelectorAll('.password-requirements li').forEach(el => el.classList.remove('valid'));
+                        
+                        // Reset button
+                        signupBtn.innerHTML = originalText;
+                        signupBtn.disabled = false;
+                        
+                        // In a real app, you would redirect to dashboard
+                        console.log('User registered:', user);
+                        
+                    }, 1500);
+                }
+            });
+            
+            // Add animation to form inputs on focus
+            document.querySelectorAll('.input-with-icon input').forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'scale(1.02)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Add hover effect to social buttons
+            document.querySelectorAll('.social-btn').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    const color = this.classList.contains('google') ? '#DB4437' :
+                                 this.classList.contains('apple') ? '#000' : '#4267B2';
+                    this.style.borderColor = color;
+                    this.style.color = color;
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.borderColor = '#e0e0e0';
+                    this.style.color = this.classList.contains('google') ? '#DB4437' :
+                                      this.classList.contains('apple') ? '#000' : '#4267B2';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
