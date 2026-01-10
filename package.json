@@ -1,0 +1,18 @@
+{
+  "name": "sdt-group-8-project-backend",
+  "version": "1.0.0",
+  "description": "sdt-group-8-project backend using Node.js and Express",
+  "main": "Server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
