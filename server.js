@@ -10,5 +10,8 @@ app.listen(3000, ()=> {
     console.log('server running on port 3000');
     
     const authroutes = require('./routes/authRoutes');
-    app.use('/api/auth' authmRoutes);
+    app.use('/api/auth', authRoutes);
+
+    const productRoutes = require('./routes/productRoutes');
+    app.use('/api/products', productRoutes);
 });
